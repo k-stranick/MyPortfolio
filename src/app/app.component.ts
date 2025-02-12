@@ -8,7 +8,7 @@ import { AwardsComponent } from './sections/awards/awards.component';
 import { ReferencesComponent } from './sections/references/references.component';
 import { ContactComponent } from './sections/contact/contact.component';
 import { FooterComponent } from './core/footer/footer.component';
-import { HeaderComponent } from './core/header/header.component';
+import { NavBarComponent } from './core/nav-bar/nav-bar.component';
 import { IntroComponent } from './sections/intro/intro.component';
 
 @Component({
@@ -23,7 +23,7 @@ import { IntroComponent } from './sections/intro/intro.component';
     ReferencesComponent,
     ContactComponent,
     FooterComponent,
-    HeaderComponent,
+    NavBarComponent,
     IntroComponent,
   ],
   templateUrl: './app.component.html',
