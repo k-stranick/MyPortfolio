@@ -4,7 +4,7 @@ import { AboutComponent } from './sections/about/about.component';
 import { ResumeComponent } from './sections/resume/resume.component';
 import { CoverLetterComponent } from './sections/cover-letter/cover-letter.component';
 import { CourseArtifactsComponent } from './sections/course-artifacts/course-artifacts.component';
-import { OtherExamplesComponent } from './sections/other-examples/other-examples.component';
+import { AwardsComponent } from './sections/awards/awards.component';
 import { ReferencesComponent } from './sections/references/references.component';
 import { ContactComponent } from './sections/contact/contact.component';
 import { FooterComponent } from './core/footer/footer.component';
@@ -19,7 +19,7 @@ import { IntroComponent } from './sections/intro/intro.component';
     ResumeComponent,
     CoverLetterComponent,
     CourseArtifactsComponent,
-    OtherExamplesComponent,
+    AwardsComponent,
     ReferencesComponent,
     ContactComponent,
     FooterComponent,
