@@ -10,7 +10,6 @@ import { ContactComponent } from './sections/contact/contact.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { HeaderComponent } from './core/header/header.component';
 import { IntroComponent } from './sections/intro/intro.component';
-import { ExperienceComponent } from './sections/experience/experience.component';
 
 @Component({
   selector: 'app-root',
@@ -26,7 +25,6 @@ import { ExperienceComponent } from './sections/experience/experience.component'
     FooterComponent,
     HeaderComponent,
     IntroComponent,
-    ExperienceComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
