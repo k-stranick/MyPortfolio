@@ -1,0 +1,36 @@
+<!-- COURSE ARTIFACTS SECTION -->
+<section id="artifacts" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="mb-4">Course Artifacts</h2>
+
+        <!-- Language Filter Dropdown -->
+        <div class="mb-3">
+            <label for="language" class="fw-semibold">Filter by Language:</label>
+            <select id="language" class="form-select w-auto d-inline-block" (change)="onLanguageChange($event)">
+                <option value="">All Languages</option>
+                <option *ngFor="let lang of programmingLanguages()" [value]="lang">
+                    {{ lang }}
+                </option>
+            </select>
+        </div>
+
+        <!-- COURSE ARTIFACTS CARDS -->
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+            <ng-container *ngFor="let repo of repos() | slice:0:6">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ repo.name }}</h5>
+                            <p class="card-text">
+                                {{ repo.stargazers_count }} stars - {{ repo.language || 'Unknown' }}
+                            </p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a [href]="repo.html_url" target="_blank" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</section>
