@@ -13,6 +13,9 @@
   background-color: #77878b;
   border-color: #305252;
 }
+h1 {
+  text-align: center;
+}
 
 p.lead {
   font-size: 1.5rem;

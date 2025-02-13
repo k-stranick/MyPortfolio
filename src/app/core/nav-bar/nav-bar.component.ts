@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,6 +8,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './nav-bar.component.css',
 })
 export class NavBarComponent {
+  @Output() contentToggled = new EventEmitter<boolean>();
+
   navLinks = [
     { label: 'About Me', anchor: '#about-me' },
     { label: 'Resume', anchor: '#resume' },
@@ -19,17 +21,24 @@ export class NavBarComponent {
   ];
 
   scrollToSection(sectionId: string) {
-    const element = document.querySelector(sectionId);
-    if (element) {
-      const offSet = 80;
-      const elementPosition =
-        element.getBoundingClientRect().top + window.scrollY;
+    this.contentToggled.emit(true);
 
-      window.scrollTo({
-        top: elementPosition - offSet,
-        behavior: 'smooth',
-      });
-    }
+    setTimeout(() => {
+      const element = document.querySelector(sectionId);
+      if (element && this.contentToggled) {
+        // const offSet = 80;
+        const navbarHeight =
+          document.querySelector('.navbar')?.clientHeight ?? 0;
+
+        const elementPosition =
+          element.getBoundingClientRect().top + window.scrollY;
+
+        window.scrollTo({
+          top: elementPosition - navbarHeight,
+          behavior: 'smooth',
+        });
+      }
+    }, 100);
 
     this.closeNavBar();
   }

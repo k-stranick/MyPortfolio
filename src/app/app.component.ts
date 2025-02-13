@@ -63,7 +63,7 @@ export class AppComponent {
    *   this.showContent = showContent;
    * }
    */
-  onContentToggled(showContent: boolean) {
-    this.showContent = showContent;
+  onContentToggled(isVisible: boolean) {
+    this.showContent = isVisible;
   }
 }
