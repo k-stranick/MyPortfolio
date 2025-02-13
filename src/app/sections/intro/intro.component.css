@@ -1,0 +1,21 @@
+.bg {
+  background-color: #488286e1;
+  color: #373e40;
+  border: 2px solid #77878b;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.bg:hover {
+  background-color: #77878b;
+  border-color: #305252;
+}
+
+p.lead {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+}

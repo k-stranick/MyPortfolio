@@ -1,14 +1,15 @@
-<app-nav-bar></app-nav-bar>
-
+<!-- Page Layout -->
+<app-nav-bar class="sticky-top"></app-nav-bar>
 <main>
-  <app-intro id="intro"></app-intro>
-  <app-about id="about"></app-about>
-  <app-resume id="resume"></app-resume>
-  <app-cover-letter id="cover-letter"></app-cover-letter>
-  <app-course-artifacts id="artifacts"></app-course-artifacts>
-  <app-awards id="awards"></app-awards>
-  <app-references id="references"></app-references>
+  <app-intro (contentToggled)="onContentToggled($event)" id="intro"></app-intro>
+  <div *ngIf="showContent">
+    <app-about id="about"></app-about>
+    <app-resume id="resume"></app-resume>
+    <app-cover-letter id="cover-letter"></app-cover-letter>
+    <app-course-artifacts id="artifacts"></app-course-artifacts>
+    <app-awards id="awards"></app-awards>
+    <app-references id="references"></app-references>
+  </div>
   <app-contact id="contact"></app-contact>
 </main>
-
 <app-footer></app-footer>
