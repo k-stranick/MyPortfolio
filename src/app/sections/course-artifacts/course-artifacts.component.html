@@ -7,7 +7,6 @@
         <div class="mb-3">
             <label for="language" class="fw-semibold">Filter by Language:</label>
             <select id="language" class="form-select w-auto d-inline-block" (change)="onLanguageChange($event)">
-                <option value="">All Languages</option>
                 <option *ngFor="let lang of programmingLanguages()" [value]="lang">
                     {{ lang }}
                 </option>
@@ -21,6 +20,8 @@
                     <div class="card h-100">
                         <div class="card-body">
                             <h5 class="card-title">{{ repo.name }}</h5>
+                            <p class="card-text">
+                                {{ repo.description }}
                             <p class="card-text">
                                 {{ repo.stargazers_count }} stars - {{ repo.language || 'Unknown' }}
                             </p>
