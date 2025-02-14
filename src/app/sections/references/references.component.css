@@ -1,4 +1,6 @@
 .references-container {
+  background-color: #E9EBEE;
+  /* anti-flash white */
   color: #373e40;
   padding: 20px;
   font-size: 1.2rem;

@@ -1,1 +1,26 @@
-<p>demonstrations works!</p>
+<Section id="demos">
+    <div class="awards-container">
+        <h2 class="mb-4">Demo Showcase</h2>
+
+        <!-- Dropdown for selecting a video -->
+        <div class="mb-3">
+            <label for="videoSelect" class="fw-semibold me-2">Choose a Demo:</label>
+            <select id="videoSelect" class="form-select w-auto d-inline-block" (change)="onVideoChange($event)">
+                <option value="">Select a demo</option>
+                <option *ngFor="let video of videoList" [value]="video.src">
+                    {{ video.name }}
+                </option>
+            </select>
+        </div>
+
+        <!-- Video Display Area -->
+        <div *ngIf="selectedVideo()" class="video-display">
+            <video [src]="selectedVideo()" controls autoplay class="video-style"></video>
+        </div>
+
+        <!-- Clear Button -->
+        <div class="text-center mt-3">
+            <button class="btn" (click)="clearVideo()">Clear Video</button>
+        </div>
+    </div>
+</Section>

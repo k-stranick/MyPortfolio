@@ -1,0 +1,42 @@
+.awards-container {
+    padding: 20px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    border: 2px solid #77878b;
+}
+
+.form-select {
+    border: 1px solid #77878b;
+    font-size: 1.2rem;
+    color: #2D3142;
+}
+
+.video-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+
+.video-style {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Ensure full-width responsiveness */
+@media (max-width: 768px) {
+    .video-style {
+        width: 90%;
+    }
+}
+
+
+.btn:active {
+    transform: scale(0.95);
+}

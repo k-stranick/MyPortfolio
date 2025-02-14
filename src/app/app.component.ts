@@ -11,6 +11,7 @@ import { FooterComponent } from './core/footer/footer.component';
 import { NavBarComponent } from './core/nav-bar/nav-bar.component';
 import { IntroComponent } from './sections/intro/intro.component';
 import { CommonModule } from '@angular/common';
+import { DemonstrationsComponent } from "./sections/demonstrations/demonstrations.component";
 
 @Component({
   selector: 'app-root',
@@ -27,6 +28,7 @@ import { CommonModule } from '@angular/common';
     NavBarComponent,
     IntroComponent,
     CommonModule,
+    DemonstrationsComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

@@ -1,6 +1,4 @@
 .awards-container {
-  background-color: #E9EBEE;
-  /* anti-flash white */
   color: #373e40;
   border: 2px solid #77878b;
   padding: 20px;
@@ -15,7 +13,8 @@
 }
 
 .awards-container .list-group-item {
-  background-color: #d3d7dd;
+  background-color: #E4E6EA;
+  /* anti-flash white */
   border: 1px solid #77878b;
   font-size: larger;
 }

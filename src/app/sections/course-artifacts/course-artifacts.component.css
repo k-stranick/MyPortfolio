@@ -1,5 +1,4 @@
 .course-artifacts-container {
-
   padding: 20px;
   font-size: 1.2rem;
   text-transform: uppercase;
@@ -19,9 +18,14 @@
   text-decoration: none;
 }
 
+.form-select {
+  border: 1px solid #77878b;
+  font-size: 1.2rem;
+  color: #2D3142;
+}
+
 /* Card Styles */
 .card {
-  /* border: 2px solid #DA7635; */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

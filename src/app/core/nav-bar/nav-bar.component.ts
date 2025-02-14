@@ -15,6 +15,7 @@ export class NavBarComponent {
     { label: 'Resume', anchor: '#resume' },
     { label: 'Cover Letter', anchor: '#cover-letter' },
     { label: 'Projects', anchor: '#projects' },
+    { label: 'Demos', anchor: '#demonstrations' },
     { label: 'Awards', anchor: '#awards' },
     { label: 'References', anchor: '#references' },
     { label: 'Contact', anchor: '#contact' },

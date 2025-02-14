@@ -1,7 +1,7 @@
 <!-- HEADER / NAVIGATION -->
 <div id="header"></div>
 <header class="sticky-top" role="banner">
-    <nav id="navBar" class="navbar navbar-expand-xl" role="navigation" aria-label="Main navigation">
+    <nav id="navBar" class="navbar navbar-expand-xxl" role="navigation" aria-label="Main navigation">
         <div class="container blur">
             <a class="navbar-brand fw-bold" (click)="scrollToSection('#header')">
                 Kyle Stranick
@@ -15,7 +15,7 @@
 
             <!-- Collapsible Menu -->
             <div class="collapse navbar-collapse" id="mainNavbar">
-                <ul class="navbar-nav ms-auto gap-3">
+                <ul class="navbar-nav ms-auto gap-2">
                     <!-- Anchor links to each section in main content -->
                     <li class="nav-item" *ngFor="let link of navLinks">
                         <a class="nav-link" (click)="scrollToSection(link.anchor)">
