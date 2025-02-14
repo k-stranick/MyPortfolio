@@ -1,6 +1,7 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GithubService } from '../../services/github.service';
+import { GithubRepo } from '../../models/github-repo';
 
 @Component({
   selector: 'app-course-artifacts',
@@ -8,23 +9,27 @@ import { GithubService } from '../../services/github.service';
   templateUrl: './course-artifacts.component.html',
   styleUrl: './course-artifacts.component.css',
 })
+
 export class CourseArtifactsComponent implements OnInit {
-  //properties
-  repos = signal<any[]>([]);
-  originalRepos: any[] = [];
+  // class properties
+  /** Holds the filtered repositories */
+  repos = signal<GithubRepo[]>([]);
+  /** Stores all original repositories fetched from GitHub */
+  originalRepos: GithubRepo[] = [];
+  /** Tracks the selected programming language */
   selectedLanguage = signal<string>('');
+
 
   constructor(private readonly githubService: GithubService) { }
 
-  //TODO: add videos and images
+
   /**
-    * Initializes the component by fetching repositories from the GitHub service.
-    */
+   * Fetches repositories from GitHub when the component initializes.
+   */
   ngOnInit(): void {
     this.githubService.getRepos().subscribe({
       next: (data) => {
-        this.originalRepos = data;
-        // this.sortAndSetRepos(data); // Initialize with all repos
+        this.originalRepos = data ?? [];
       },
       error: (err) => console.error('Error fetching repos', err),
     });
@@ -32,13 +37,11 @@ export class CourseArtifactsComponent implements OnInit {
 
 
   /**
-  * Handles the language change event from the dropdown.
-  *
+  * Updates the selected language and applies filtering.
   * @param event - The event triggered by changing the language dropdown.
   */
   onLanguageChange(event: Event): void {
-    const target = event.target as HTMLSelectElement;
-    this.selectedLanguage.set(target.value);
+    this.selectedLanguage.set((event.target as HTMLSelectElement).value);
     this.applyFilters();
   }
 
@@ -47,18 +50,38 @@ export class CourseArtifactsComponent implements OnInit {
     * Applies filters to the repositories based on the selected language.
     */
   private applyFilters(): void {
-    let filteredRepos = [...this.originalRepos];
+    const selectedLang = this.selectedLanguage().trim().toLowerCase();
 
-    // If a language is selected, filter the repos
-    if (this.selectedLanguage()) {
-      filteredRepos = filteredRepos.filter(
-        (repo) =>
-          repo.language &&
-          repo.language.toLowerCase() === this.selectedLanguage().toLowerCase()
-      );
+    // If "Select a language" (empty value) is chosen, hide all projects
+    if (!selectedLang) {
+      this.repos.set([]); // Clear displayed repositories
+      return;
     }
 
+    if (selectedLang === 'all') {
+      this.sortAndSetRepos(this.originalRepos);
+      return;
+    }
+
+    // Otherwise, filter repositories based on language
+    const filteredRepos = this.originalRepos.filter(
+      repo => (repo.language?.toLowerCase() ?? '') === selectedLang
+    );
+
     this.sortAndSetRepos(filteredRepos);
+  }
+
+  /**
+ * Clears the selected language filter and hides all repositories.
+ * Resets the dropdown selection.
+ */
+  clearFilter(): void {
+    this.selectedLanguage.set('');
+    this.repos.set([]); // Clears displayed repositories
+
+    // Reset dropdown selection to Select a language whose value = ''
+    const selectElement = document.getElementById('language') as HTMLSelectElement;
+    if (selectElement) selectElement.value = '';
   }
 
 
@@ -68,22 +91,21 @@ export class CourseArtifactsComponent implements OnInit {
  * @param repos - The array of repositories to be sorted and set.
  */
   private sortAndSetRepos(repos: any[]): void {
-    repos.sort((a, b) => b.stargazers_count - a.stargazers_count);
-    this.repos.set(repos);
+    this.repos.set([...repos].sort((a, b) => b.stargazers_count - a.stargazers_count));
   }
 
 
   /**
- * Extracts unique programming languages from the repositories.
- *
- * @returns An array of unique programming languages sorted alphabetically.
- */
-  programmingLanguages(): string[] {
-    // Extract unique language names from repos
-    const languages = new Set(
-      this.originalRepos.map((repo) => repo.language).filter(Boolean)
-    );
-    return Array.from(languages).sort((a, b) => a.localeCompare(b));
+   * Extracts unique programming languages from the repository list.
+   * @returns An array of unique programming languages sorted alphabetically.
+   */
+  programmingLanguages(): Array<string> {
+    if (!this.originalRepos || this.originalRepos.length === 0)
+      return [];
+
+    return Array.from(
+      new Set(this.originalRepos.map(repo => repo.language ?? '').filter(language => language.trim() !== ''))
+    ).sort((a, b) => a.localeCompare(b));
   }
 }
 // Compare this snippet from src/app/sections/course-artifacts/course-artifacts.component.html:

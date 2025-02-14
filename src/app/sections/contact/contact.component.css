@@ -27,8 +27,37 @@
 /* Button Styles */
 .btn {
   background-color: #4f5d75;
+  align-content: center;
 }
 
 .btn:hover {
   background-color: #2d3142;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.button-container .btn {
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+}
+
+/* Responsive Stacking at Small Screens */
+@media (max-width: 768px) {
+  .button-container {
+    flex-direction: column;
+    /* Stack buttons vertically */
+    align-items: center;
+    /* Center buttons */
+  }
+
+  .button-container .btn {
+    width: 100%;
+    /* Full width for better UX */
+  }
 }

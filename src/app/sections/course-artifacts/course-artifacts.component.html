@@ -1,21 +1,26 @@
 <!-- COURSE ARTIFACTS SECTION -->
 <section id="projects">
     <div class="course-artifacts-container">
-        <h2 class="mb-4">Projects</h2>
+        <h2 class="mb-4">Coding Projects</h2>
 
         <!-- Language Filter Dropdown -->
         <div class="mb-3">
-            <label for="language" class="fw-semibold">Filter by Language: </label>
+            <label for="language" class="fw-semibold">Filter by Language:</label>
             <select id="language" class="form-select w-auto d-inline-block" (change)="onLanguageChange($event)">
-                <option *ngFor="let lang of programmingLanguages()" [value]="lang">
-                    {{ lang }}
+                <option value="" selected>Select a language</option>
+                <option value="all">All Projects</option>
+                <option *ngFor="let language of programmingLanguages()" [value]="language">
+                    {{ language }}
                 </option>
             </select>
+        </div>
+        <div>
+            <button class="btn" (click)="clearFilter()">Clear</button>
         </div>
 
         <!-- COURSE ARTIFACTS CARDS -->
         <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
-            <ng-container *ngFor="let repo of repos() | slice:0:6">
+            <ng-container *ngFor="let repo of repos()">
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
@@ -27,7 +32,7 @@
                             </p>
                         </div>
                         <div class="card-footer text-center">
-                            <a [href]="repo.html_url" target="_blank" class="btn btn-primary">View Project</a>
+                            <a [href]="repo.html_url" target="_blank" class="btn">View Project</a>
                         </div>
                     </div>
                 </div>
