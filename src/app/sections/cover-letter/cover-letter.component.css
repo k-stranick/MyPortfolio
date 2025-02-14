@@ -1,12 +1,10 @@
 .cover-letter-container {
-  background-color: #b7d5d4; /* Light pastel background */
-  color: #373e40; /* Dark text for contrast */
-  border: 2px solid #77878b; /* Light border */
-  border-radius: 4px;
+  background-color: #E9EBEE;
+  /* anti-flash white */
+  color: #373e40;
+  border: 2px solid #77878b;
   padding: 20px;
   font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
 }

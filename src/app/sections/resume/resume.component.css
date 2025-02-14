@@ -1,14 +1,16 @@
 .resume-container {
-  color: #373e40; /* Dark text for contrast */
+  color: #373e40;
+  /* Dark text for contrast */
   padding: 20px;
   font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: 1px;
   transition: all 0.3s ease;
+  border: 2px solid #77878b;
 }
 
 .resume-container p {
-  color: #373e40; /* Dark text for paragraphs */
+  color: #373e40;
+  /* Dark text for paragraphs */
   margin-bottom: 10px;
 }

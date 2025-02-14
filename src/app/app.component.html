@@ -1,9 +1,9 @@
 <!-- Page Layout -->
 <app-nav-bar (contentToggled)="onContentToggled($event)"></app-nav-bar>
 <div id="content">
-  <main>
+  <main class="font-uppercase">
     <app-intro (contentToggled)="onContentToggled($event)" id="intro"></app-intro>
-    <div *ngIf="showContent">
+    <div *ngIf="showContent" class="bg-color">
       <app-about id="about"></app-about>
       <app-resume id="resume"></app-resume>
       <app-cover-letter id="cover-letter"></app-cover-letter>

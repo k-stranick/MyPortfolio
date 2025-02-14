@@ -1,31 +1,36 @@
 .course-artifacts-container {
-  color: #373e40; /* Dark text for contrast */
+  color: #373e40;
+  /* Dark text for contrast */
   padding: 20px;
   font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: 1px;
   transition: all 0.3s ease;
+  border: 2px solid #77878b;
 }
 
 .course-artifacts-container h2 {
-  color: #305252; /* Green accent for headings */
+  color: #305252;
+  /* Green accent for headings */
   margin-bottom: 15px;
 }
 
 .course-artifacts-container p {
-  color: #373e40; /* Dark text for paragraphs */
+  color: #373e40;
+  /* Dark text for paragraphs */
   margin-bottom: 10px;
 }
 
 .course-artifacts-container a {
-  color: #305252; /* Green accent for links */
+  color: #305252;
+  /* Green accent for links */
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .course-artifacts-container a:hover {
-  color: #488286; /* Hover effect for links */
+  color: #488286;
+  /* Hover effect for links */
 }
 
 .course-artifacts-container ul {
@@ -35,28 +40,33 @@
 
 .course-artifacts-container ul li {
   margin-bottom: 10px;
-  background-color: #ffffff; /* White background for list items */
-  border: 1px solid #77878b; /* Light border for list items */
+  background-color: #ffffff;
+  /* White background for list items */
+  border: 1px solid #77878b;
+  /* Light border for list items */
   border-radius: 4px;
   padding: 10px;
 }
 
 .course-artifacts-container .btn {
-  background-color: #305252; /* Green accent for button */
-  color: #ffffff; /* White text for readability */
-  border: 1px solid #373e40; /* Darker green border */
+  background-color: #305252;
+  /* Green accent for button */
+  color: #ffffff;
+  /* White text for readability */
+  border: 1px solid #373e40;
+  /* Darker green border */
   border-radius: 4px;
   padding: 10px 20px;
   font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: 1px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .course-artifacts-container .btn:hover {
-  background-color: #373e40; /* Darken on hover for visual feedback */
+  background-color: #373e40;
+  /* Darken on hover for visual feedback */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }

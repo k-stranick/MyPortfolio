@@ -1,18 +1,22 @@
 .bg {
-  background-color: #488286e1;
+  background-color: #2d3142e0;
   color: #373e40;
-  border: 2px solid #77878b;
   border-radius: 4px;
+  border: 2px solid #77878b;
   font-size: 1.2rem;
-  text-transform: uppercase;
   font-weight: 700;
   transition: all 0.3s ease;
 }
 
 .bg:hover {
-  background-color: #77878b;
-  border-color: #305252;
+  background-color: #da7635;
+  border: 2px solid #305252;
 }
+
+.bg:hover .container {
+  border-color: #4f5d75bb;
+}
+
 h1 {
   text-align: center;
 }
@@ -22,3 +26,10 @@ p.lead {
   font-weight: 300;
   margin-bottom: 20px;
 }
+
+img {
+  max-width: 300px;
+  border: 2px solid #da7635;
+}
+
+/*da7635  de9465  DC854D*/

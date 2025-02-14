@@ -1,12 +1,34 @@
+/* Contact Container */
 .contact-container {
-  background-color: #488286e1;
+  background-color: #2d3142e0;
   color: #373e40;
   border: 2px solid #77878b;
   border-radius: 4px;
   padding: 20px;
-  margin: 20px 0;
   font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: 700;
   transition: all 0.3s ease;
+}
+
+.contact-container h2 {
+  color: #D8D4D5;
+}
+
+.contact-container:hover h2 {
+  color: #2D3142;
+}
+
+.contact-container:hover {
+  background-color: #da7635;
+  border: 2px solid #305252;
+}
+
+/* Button Styles */
+.btn {
+  background-color: #4f5d75;
+}
+
+.btn:hover {
+  background-color: #2d3142;
 }
