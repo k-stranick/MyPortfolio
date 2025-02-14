@@ -2,9 +2,7 @@
   background-color: #E9EBEE;
   /* anti-flash white */
   color: #373e40;
-  /* Dark text for contrast */
   border: 2px solid #77878b;
-  /* Light border */
   padding: 20px;
   font-size: 1.2rem;
   text-transform: uppercase;
@@ -13,13 +11,11 @@
 }
 
 .awards-container h2 {
-  color: #305252;
-  /* Green accent for headings */
   margin-bottom: 15px;
 }
 
-.awards-container p {
-  color: #373e40;
-  /* Dark text for paragraphs */
-  margin-bottom: 10px;
+.awards-container .list-group-item {
+  background-color: #d3d7dd;
+  border: 1px solid #77878b;
+  font-size: larger;
 }

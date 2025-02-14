@@ -1,21 +1,20 @@
 .footer {
-  background-color: #373e40; /* Dark background */
+  background-color: #2d3142e0;
   padding: 20px;
   text-align: center;
   width: 100%;
   flex-shrink: 0;
 }
 
-.footer a {
-  color: #77878b; /* Link color */
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer a:hover {
-  color: #488286; /* Hover effect for links */
+p {
+  color: #2D3142;
+  margin-bottom: 10px;
 }
 
 .container {
   margin-bottom: 0;
+}
+
+.container:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
