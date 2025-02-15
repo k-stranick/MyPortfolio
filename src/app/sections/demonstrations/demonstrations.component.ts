@@ -12,7 +12,7 @@ export class DemonstrationsComponent {
 
   // List of demo videos
   videoList = [
-    { name: 'Skyrend', src: '/MyPortfolio/assets/videos/skyrendc.mp4' },
+    { name: 'Skyrend', src: '/docs/assets/videos/skyrendc.mp4' },
     { name: 'Weather App', src: '/MyPortfolio/assets/videos/weatherc.mp4' },
     { name: 'Data Form', src: '/MyPortfolio/assets/videos/dataFormc.mp4' },
   ];
