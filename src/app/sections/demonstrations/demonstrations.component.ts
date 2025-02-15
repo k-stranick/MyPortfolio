@@ -12,9 +12,9 @@ export class DemonstrationsComponent {
 
   // List of demo videos
   videoList = [
-    { name: 'Skyrend', src: 'assets/videos/skyrendc.mp4' },
-    { name: 'Weather App', src: 'assets/videos/weatherc.mp4' },
-    { name: 'Data Form', src: 'assets/videos/dataFormc.mp4' },
+    { name: 'Skyrend', src: './assets/videos/skyrendc.mp4' },
+    { name: 'Weather App', src: './assets/videos/weatherc.mp4' },
+    { name: 'Data Form', src: './assets/videos/dataFormc.mp4' },
   ];
 
   //Signal to track the selected video
