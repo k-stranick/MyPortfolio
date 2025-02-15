@@ -10,12 +10,15 @@ body {
 
 }
 
+
 /* all info related to me is housed inside this*/
 #content {
   flex: 1;
   display: flex;
   flex-direction: column;
   padding: 20px;
+  min-height: 100vh;
+
 }
 
 .container {
