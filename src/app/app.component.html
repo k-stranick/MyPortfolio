@@ -1,5 +1,5 @@
 <!-- Page Layout -->
-<app-nav-bar (contentToggled)="onContentToggled($event)"></app-nav-bar>
+<!-- <app-nav-bar (contentToggled)="onContentToggled($event)"></app-nav-bar>
 <div id="content">
   <main class="font-uppercase">
     <app-intro (contentToggled)="onContentToggled($event)" id="intro"></app-intro>
@@ -15,5 +15,26 @@
     <app-contact id="contact"></app-contact>
   </main>
 </div>
-<app-footer></app-footer>
+<app-footer></app-footer> -->
 <!-- Compare this snippet from src/app/app.component.ts: -->
+
+<app-nav-bar (contentToggled)="onContentToggled($event)"></app-nav-bar>
+<div id="content">
+  <main class="font-uppercase">
+    <app-intro (contentToggled)="onContentToggled($event)" id="intro"></app-intro>
+
+    <!-- Lazy Load Components -->
+    <ng-container *ngIf="showContent">
+      <ng-container *ngComponentOutlet="aboutComponent"></ng-container>
+      <ng-container *ngComponentOutlet="resumeComponent"></ng-container>
+      <ng-container *ngComponentOutlet="coverLetterComponent"></ng-container>
+      <ng-container *ngComponentOutlet="artifactsComponent"></ng-container>
+      <ng-container *ngComponentOutlet="demonstrationsComponent"></ng-container>
+      <ng-container *ngComponentOutlet="awardsComponent"></ng-container>
+      <ng-container *ngComponentOutlet="referencesComponent"></ng-container>
+    </ng-container>
+
+    <app-contact id="contact"></app-contact>
+  </main>
+</div>
+<app-footer></app-footer>
