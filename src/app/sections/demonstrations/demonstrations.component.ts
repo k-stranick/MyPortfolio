@@ -32,4 +32,16 @@ export class DemonstrationsComponent {
   clearVideo(): void {
     this.selectedVideo.set({ src: null, type: null });
   }
+
+  getYouTubeVideoId(url: string | null | undefined): string {
+    if (!url) return ''; // Ensure we always return a string
+
+    // Updated regex to handle multiple YouTube link formats
+    const regExp = /(?:youtu\.be\/|youtube\.com\/(?:.*[?&]v=|embed\/|v\/))([^"&?\/\s]{11})/;
+    const match = regExp.exec(url || '');
+
+    return match ? match[1] : ''; // Always return a valid string
+  }
+
+
 }
