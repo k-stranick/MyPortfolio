@@ -14,9 +14,15 @@
         </div>
 
         <!-- Video Display Area -->
-        <div *ngIf="selectedVideo()" class="video-display">
+        <!-- <div *ngIf="selectedVideo()" class="video-display">
             <video [src]="selectedVideo()" controls autoplay class="video-style"></video>
+        </div> -->
+        <div *ngIf="selectedVideo()?.src && selectedVideo()?.type === 'youtube'" class="video-display">
+            <youtube-player [videoId]="getYouTubeVideoId(selectedVideo().src || '') ?? ''"></youtube-player>
         </div>
+
+
+
 
         <!-- Clear Button -->
         <div class="text-center mt-3">
