@@ -5,6 +5,7 @@ import { GithubRepo } from '../../models/github-repo';
 
 @Component({
   selector: 'app-course-artifacts',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './course-artifacts.component.html',
   styleUrl: './course-artifacts.component.css',

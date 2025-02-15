@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { NgIf } from '@angular/common';
-import { NgFor } from '@angular/common';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-demonstrations',
+  standalone: true,
   imports: [NgIf, NgFor],
   templateUrl: './demonstrations.component.html',
   styleUrl: './demonstrations.component.css'
