@@ -15,6 +15,7 @@
           "options": {
             "outputPath": "dist/angular-portfolio",
             "index": "src/index.html",
+            "browser": "src/main.ts",
             "baseHref": "/MyPortfolio/",
             "polyfills": [
               "zone.js"
