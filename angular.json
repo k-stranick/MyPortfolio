@@ -16,7 +16,7 @@
             "outputPath": "dist/angular-portfolio",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "baseHref": "/MyPortfolio/",
+            "baseHref": "/",
             "polyfills": [
               "zone.js"
             ],
