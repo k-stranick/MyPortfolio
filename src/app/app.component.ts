@@ -5,6 +5,7 @@ import { ContactComponent } from './sections/contact/contact.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { NavBarComponent } from './core/nav-bar/nav-bar.component';
 import { IntroComponent } from './sections/intro/intro.component';
+import './lazy-loader.keep'; // Keep this import to prevent tree-shaking of lazy-loaded components
 
 @Component({
   selector: 'app-root',
